@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<CONFIGURATION> 
+<SIP_STACK 
+stack_name="nist-proxy"
+stack_IP_address="127.0.0.1"
+__router_path="gov.nist.sip.proxy.router.ProxyRouter"
+max_connections="20"
+thread_pool_size="20"
+>       
+
+<LISTENING_POINT port="4000" transport="udp" />
+<LISTENING_POINT port="4000" transport="tcp" />
+<DOMAIN domain="there.com" />
+<DOMAIN domain="pingtel.com" />
+<DOMAIN domain="ubi.com" />
+<DOMAIN domain="dolphin.no"></DOMAIN>
+<DOMAIN domain="dolphin.com"></DOMAIN>
+<DOMAIN domain="hotmail.com" />
+<DOMAIN domain="nist.gov" />
+<DOMAIN domain="nitrogen.epact.se" />
+</SIP_STACK>
+
+<REGISTRAR
+export_registrations="true"
+port="1099"
+/>
+
+<LOGGING
+access_log_via_rmi="false"
+rmi_port="0"
+log_lifetime="3600"
+output_proxy="debug/proxy_output.txt"
+server_log="debug/server_log.txt"
+debug_log="debug/debug_log.txt"
+log_level="INFO"
+/>
+
+<PRESENCE_SERVER 
+enable="true"
+/>
+
+<AUTHENTICATION
+enable="false"
+method="digest"
+class_file="gov.nist.sip.proxy.authentication.DigestServerAuthenticationMethod"
+passwords_file="./configuration/gov/nist/sip/proxy/configuration/passwords.xml"
+/>
+
+<REGISTRATIONS 
+enable="true"
+expires_time="3600"
+registrations_file="./configuration/gov/nist/sip/proxy/configuration/registrations.xml"
+/>
+
+<GOOGLE 
+key="ABQIAAAASATC2yBoheTGWDkF2Lf-nRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxRBs7jq4aimw3Wl1mqgrSgBT2a5og" 
+databaseURL="http://base.google.com/base/feeds/items" 
+authenticationURL="https://www.google.com/accounts/ClientLogin" 
+email="jainsip@yahoo.com" 
+password="proxy2006" 
+source ="sipregistrations" 
+service ="gbase"
+itemType="sipregistrations" />
+
+</CONFIGURATION> 
+

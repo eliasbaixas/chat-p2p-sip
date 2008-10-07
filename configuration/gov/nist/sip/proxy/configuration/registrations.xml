@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='us-ascii'?> 
+
+<!--
+  <REGISTRATION  displayName="olivier" uri="sip:oli@there.com"
+    ...
+  </REGISTRATION>
+  The display name and the uri attributes are what would be expected in the 
+  To header of the REGISTER. Important: no parameters are accepted in this uri!!
+  The uri attribute will constitute the key for the registrar to retrieve the
+  registration.
+  Parameters are accepted for the contact uri.   
+  
+    <CONTACT  uri="mailto:oli@129.6.50.116:8000"    />
+        <CONTACT  displayName="olivier work" uri="sip:oli@129.6.55.72:8000" expires="10" />
+        <CONTACT  uri="sipc:oli@129.6.55.116:8000;transport=UDP;user=olivier" expires="56" />
+    
+       <CONTACT  uri="sip:129.6.50.23" />
+        <CONTACT  uri="sip:129.6.50.23" />
+          <CONTACT  uri="sip:amelie@129.6.50.23" />
+    
+-->
+<REGISTRATIONS> 
+    <REGISTRATION  displayName="Ranga " uri="sip:mranga@nist.gov" >
+	<BUDDY     uri = "sip:deruelle@nist.gov" />
+    </REGISTRATION>
+    <REGISTRATION displayName="sip1" uri="sip:sip1@dolphin.com">
+    	<BUDDY uri="sip:sip2@dolphin.com"></BUDDY>
+    </REGISTRATION>
+    <REGISTRATION displayName="dlazreg" uri="sip:dennis@dolphin.com">
+    	<BUDDY uri="sip:sip1@dolphin.com"></BUDDY>
+    	<BUDDY uri="sip:sip2@dolphin.com"></BUDDY>
+    </REGISTRATION>
+    <REGISTRATION displayName="sip2" uri="sip:sip2@dolphin.com">
+    	<BUDDY uri="sip1"></BUDDY>
+    </REGISTRATION>
+
+    <REGISTRATION  displayName="Deruelle " uri="sip:deruelle@nist.gov" >
+	<BUDDY     uri = "sip:mranga@nist.gov" />
+    </REGISTRATION>
+</REGISTRATIONS> 
